@@ -1,13 +1,13 @@
 .campo-texto label{
     display: block;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .campo-texto input{
     width: 100%;
     border: none;
     padding: 20px;
-    font-size: 26px;
+    font-size: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-sizing: border-box;
