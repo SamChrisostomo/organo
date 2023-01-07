@@ -52,7 +52,7 @@ function App() {
     return (
         <div className="App">
             <Banner />
-            <Formulario aoColaboradorAdicionado={colaborador => novoColaborador(colaborador)} />
+            <Formulario times={times.map(time => time.nome)} aoColaboradorAdicionado={colaborador => novoColaborador(colaborador)} />
             {times.map(time => <Time key={time.nome} nome={time.nome} primary={time.primary} secondary={time.secondary} />)}
         </div>
     );
