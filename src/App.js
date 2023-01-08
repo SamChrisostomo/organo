@@ -47,7 +47,6 @@ function App() {
 
     const novoColaborador = (e) => {
         setColaborador([...colaboradores, e])
-        console.log(colaboradores)
     }
 
     return (
