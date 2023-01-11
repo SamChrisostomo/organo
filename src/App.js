@@ -43,10 +43,28 @@ function App() {
         }
     ]
 
-    const [colaboradores, setColaborador] = useState([])
+    let colabs = JSON.parse(localStorage.getItem("itens")) || []
 
-    const novoColaborador = (e) => {
-        setColaborador([...colaboradores, e])
+    const [colaboradores, setColaborador] = useState(colabs)
+
+    const novoColaborador = (data) => {
+        const existe = colabs.find(elemento => elemento.nome === data.nome)
+
+        if (existe) {
+            data.id = existe.id
+            colabs[colabs.findIndex(e => e.id === existe.id)] = data
+            console.log("Elemento Atualizado")
+        } else {
+            data.id = colabs[colabs.length - 1] ? (colabs[colabs.length - 1]).id + 1 : 0
+            colabs = [...colaboradores, data]
+            console.log("Eu fui executado?")
+        }
+        setColaborador(colabs)
+        localStorage.setItem("itens", JSON.stringify(colabs))
+    }
+
+    const atualizaElemento = (data) => {
+
     }
 
     return (
